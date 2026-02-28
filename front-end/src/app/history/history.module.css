@@ -1,0 +1,85 @@
+/* ========================================
+   HISTORY PAGE — somente estilos da página
+   (HistoryItem, ListSkeleton, Pagination, AuthGate, EmptyState → próprios módulos)
+   ======================================== */
+
+.container {
+    padding: 3rem 1rem 5rem;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ── Cabeçalho da página ── */
+.pageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.pageHeaderLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+}
+
+.pageHeaderIcon {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-purple);
+}
+
+.pageTitle {
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: var(--foreground);
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.pageSubtitle {
+    font-size: 0.75rem;
+    color: var(--muted-light);
+    margin-top: 0.1rem;
+}
+
+/* ── Container da lista ── */
+.historyList {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--surface);
+    box-shadow: var(--shadow-xs);
+}
+
+/* ── Estado de erro inline ── */
+.centerState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 3rem 1rem;
+}
+
+.errorText {
+    color: var(--danger);
+    font-weight: 500;
+    font-size: 0.9375rem;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 600px) {
+    .container {
+        padding: 2rem 0.75rem 4rem;
+    }
+}

@@ -1,0 +1,51 @@
+.link {
+    text-decoration: none;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    cursor: pointer;
+    transition: transform var(--transition-fast), border-color var(--transition), box-shadow var(--transition);
+}
+
+.link:hover .card {
+    transform: translateY(-2px);
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-purple);
+}
+
+.word {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--foreground);
+    text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.removeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    border: none;
+    background: transparent;
+    color: var(--muted-light);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.removeBtn:hover {
+    background: var(--danger-bg);
+    color: var(--danger);
+}

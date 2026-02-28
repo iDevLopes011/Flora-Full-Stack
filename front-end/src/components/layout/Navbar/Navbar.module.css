@@ -1,0 +1,117 @@
+.navbar {
+    background: linear-gradient(135deg, var(--purple-700) 0%, var(--purple-600) 50%, var(--primary) 100%);
+    color: #fff;
+    padding: 0 0;
+    box-shadow: 0 2px 20px rgba(147, 51, 234, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 34px;
+    width: auto;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: var(--radius);
+    transition: background var(--transition), opacity var(--transition);
+    opacity: 0.85;
+}
+
+.navLink:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.authMenu {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 0.5rem;
+    padding-left: 0.75rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.authBtn {
+    color: #fff !important;
+    font-size: 0.8125rem;
+}
+
+.authBtn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logoutBtn {
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    border-radius: var(--radius-full);
+    transition: background var(--transition), color var(--transition);
+}
+
+.logoutBtn:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    opacity: 0.9;
+}
+
+.userName {
+    text-transform: capitalize;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .navLinks {
+        gap: 0.15rem;
+    }
+
+    .navLink span {
+        display: none;
+    }
+
+    .navLink {
+        padding: 0.45rem;
+    }
+
+    .userName {
+        display: none;
+    }
+}

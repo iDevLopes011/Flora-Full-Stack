@@ -1,0 +1,33 @@
+.btn,
+.btnActive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+    background-color: var(--background);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all var(--transition);
+    flex-shrink: 0;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: rgba(245, 158, 11, 0.08);
+    color: var(--amber-500);
+    border-color: var(--amber-400);
+}
+
+.btn:disabled,
+.btnActive:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btnActive {
+    background-color: rgba(245, 158, 11, 0.08);
+    color: var(--amber-500);
+    border-color: var(--amber-400);
+}

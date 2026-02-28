@@ -1,0 +1,61 @@
+services:
+  db_flora:
+    image: postgres:15-alpine
+    container_name: postgres_flora
+    restart: always
+    environment:
+      POSTGRES_USER: user_flora
+      POSTGRES_PASSWORD: 1234_flora
+      POSTGRES_DB: flora_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis_flora:
+    image: redis:7-alpine
+    container_name: redis_flora
+    restart: always
+    ports:
+      - "6379:6379"
+
+  api_flora:
+    build:
+      context: ./back-end
+      dockerfile: Dockerfile.dev
+    container_name: api_flora
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - DATABASE_URL=postgresql://user_flora:1234_flora@db_flora:5432/flora_db?schema=public
+      - JWT_SECRET=super-secret-key-flora
+      - REDIS_HOST=redis_flora
+      - REDIS_PORT=6379
+    volumes:
+      - ./back-end:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - db_flora
+      - redis_flora
+
+  web_flora:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile.dev
+    container_name: web_flora
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    volumes:
+      - ./front-end:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
+    depends_on:
+      - api_flora
+
+volumes:
+  postgres_data:

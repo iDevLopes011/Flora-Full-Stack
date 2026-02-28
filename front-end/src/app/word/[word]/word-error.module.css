@@ -1,0 +1,25 @@
+.errorContainer {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--wp--preset--color--white);
+    border-radius: var(--border-radius);
+    border: 1px dashed #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.errorContainer h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.errorContainer p {
+    color: #666;
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+
+.backButton {
+    margin: 0 auto;
+}

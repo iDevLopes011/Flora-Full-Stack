@@ -1,0 +1,178 @@
+/* ── SearchBar Component ── */
+
+.form {
+    display: flex;
+    gap: 0.625rem;
+    max-width: 560px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.inputWrapper {
+    flex: 1;
+    position: relative;
+}
+
+.input {
+    height: 2.75rem;
+}
+
+.button {
+    height: 2.75rem;
+    padding: 0 1.5rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ── Dropdown ── */
+.dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.06);
+    z-index: 100;
+    overflow: hidden;
+    animation: dropdownIn 0.14s ease;
+}
+
+@keyframes dropdownIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px) scale(0.99);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ── Lista ── */
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0.3rem 0;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    cursor: pointer;
+    color: var(--foreground);
+    border-left: 3px solid transparent;
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.item:hover,
+.itemActive {
+    background: var(--primary-bg);
+    border-left-color: var(--primary);
+}
+
+/* Ícone lateral */
+.itemIcon {
+    flex-shrink: 0;
+    color: var(--muted-light);
+    display: flex;
+    align-items: center;
+    transition: color var(--transition-fast);
+}
+
+.item:hover .itemIcon,
+.itemActive .itemIcon {
+    color: var(--primary);
+}
+
+/* Texto da palavra */
+.itemWord {
+    flex: 1;
+    font-size: 0.875rem;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    letter-spacing: 0.01em;
+}
+
+/* Trecho que bateu com a busca */
+.itemMark {
+    background: none;
+    color: var(--primary);
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* ── Badges ── */
+.badge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.badgeExact {
+    background: var(--primary);
+    color: #fff;
+}
+
+.badgeStart {
+    background: var(--primary-bg);
+    color: var(--primary);
+    border: 1px solid var(--border);
+}
+
+/* ── Loading ── */
+.loadingRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+.spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Vazio ── */
+.empty {
+    padding: 0.875rem 1rem;
+    color: var(--muted-light);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 600px) {
+    .form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+}

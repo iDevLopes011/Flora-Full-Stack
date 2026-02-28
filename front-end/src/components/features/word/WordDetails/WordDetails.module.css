@@ -1,0 +1,103 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    margin-bottom: 0.5rem;
+}
+
+.word {
+    font-size: 2.75rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--purple-600), var(--purple-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: capitalize;
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.03em;
+}
+
+.phonetic {
+    font-size: 1.125rem;
+    color: var(--muted);
+    font-family: 'Inter', monospace;
+    font-weight: 500;
+}
+
+/* ── Meanings ── */
+.meaningsList {
+    margin-top: 1rem;
+}
+
+.meaningGroup {
+    margin-bottom: 2.25rem;
+}
+
+.meaningGroup:last-child {
+    margin-bottom: 0;
+}
+
+.partOfSpeech {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--foreground);
+    font-style: italic;
+    margin-bottom: 0.875rem;
+    display: flex;
+    align-items: center;
+}
+
+.partOfSpeech::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--border-light);
+    margin-left: 0.875rem;
+}
+
+.definitionsList {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.definitionItem {
+    position: relative;
+    margin-bottom: 1.25rem;
+}
+
+.definitionItem::before {
+    content: "";
+    position: absolute;
+    left: -1.25rem;
+    top: 0.6rem;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background-color: var(--primary-light);
+}
+
+.definitionText {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--foreground);
+    margin-bottom: 0.35rem;
+}
+
+.exampleText {
+    font-size: 0.875rem;
+    color: var(--muted);
+    font-style: italic;
+    padding-left: 0.875rem;
+    border-left: 2px solid var(--purple-200);
+    line-height: 1.6;
+}
+
+.noDetails {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--muted);
+    font-size: 0.9375rem;
+}

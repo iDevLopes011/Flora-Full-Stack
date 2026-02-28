@@ -1,0 +1,122 @@
+/* ========================================
+   HOME PAGE — somente estilos da página
+   (SearchBar, HistoryItem, ListSkeleton → próprios módulos)
+   ======================================== */
+
+.container {
+    padding: 3.5rem 1rem 5rem;
+}
+
+.main {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+/* ── Hero ── */
+.heroSection {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.title {
+    font-size: 2.75rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--purple-600), var(--purple-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+}
+
+.subtitle {
+    font-size: 1.0625rem;
+    color: var(--muted);
+    margin-bottom: 2.25rem;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.65;
+}
+
+/* ── Histórico recente ── */
+.historySection {
+    margin-top: 0;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.sectionTitle {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--foreground);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.sectionIcon {
+    color: var(--primary);
+}
+
+.viewAllLink {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    opacity: 0.8;
+    transition: opacity var(--transition);
+}
+
+.viewAllLink:hover {
+    opacity: 1;
+}
+
+/* Container da lista */
+.historyList {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--surface);
+    box-shadow: var(--shadow-xs);
+}
+
+/* Estado vazio inline (sem palavras pesquisadas) */
+.historyEmpty {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--muted-light);
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.historyEmptyIcon {
+    opacity: 0.25;
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 2.5rem 0.75rem 4rem;
+    }
+}
