@@ -1,6 +1,13 @@
 import Cookies from "js-cookie";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const getApiUrl = () => {
+  if (typeof window !== "undefined") {
+    return `http://${window.location.hostname}:8000`;
+  }
+  return process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+};
+
+const API_BASE_URL = getApiUrl();
 
 export const COOKIE_TOKEN = "flora_token";
 export const COOKIE_REFRESH = "flora_refresh";
