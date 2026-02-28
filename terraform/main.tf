@@ -97,6 +97,11 @@ resource "aws_instance" "flora_ec2" {
               git clone https://github.com/iDevLopes011/Flora-Full-Stack.git
               
               cd Flora-Full-Stack
+              
+              TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+              PUBLIC_IP=$(curl -H "X-aws-ec2-metadata-token: $TOKEN" -s http://169.254.169.254/latest/meta-data/public-ipv4)
+              echo "NEXT_PUBLIC_API_URL=http://$PUBLIC_IP:8000" > .env
+              
               docker compose up -d --build
               EOF
 }

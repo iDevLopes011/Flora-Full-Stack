@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Flora Dictionary",
   description:
     "Um dicionário moderno construído com a identidade visual da Flora.",
+  icons: {
+    icon: "/Flora_Logo_Preferencial_Negativo_RGB.svg",
+  },
 };
 
 import { Navbar } from "@/components/layout/Navbar/Navbar";
