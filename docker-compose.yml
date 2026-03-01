@@ -50,10 +50,6 @@ services:
       - "3000:3000"
     environment:
       - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:8000}
-    volumes:
-      - ./front-end:/usr/src/app
-      - /usr/src/app/node_modules
-      - /usr/src/app/.next
     depends_on:
       - api_flora
 
