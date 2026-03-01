@@ -35,7 +35,7 @@ Este projeto foi construído utilizando as seguintes linguagens, frameworks e fe
 
 **Infraestrutura e Ferramentais:**
 - Docker & Docker Compose (Containerização e Orquestração)
-- Git (Controle de versionamento utilizando `.gitignore` padrão para Node e pastas de Build)
+- Git (Controle de versionamento utilizando)
 
 ---
 
@@ -76,16 +76,6 @@ Depois de rodar o comando acima e aguardar alguns segundos para que os container
 
 ---
 
-## � Como Atualizar/Recarregar após Alterações
-
-Se você fizer alguma alteração no código (seja no front-end ou no back-end) e quiser que o Docker reflita as mudanças, basta rodar o comando de *build* novamente na raiz do projeto:
-
-```bash
-docker-compose up --build -d
-```
-> Isso fará com que o Docker identifique os arquivos alterados, reconstrua apenas a imagem necessária e reinicie o container com a versão mais atualizada de forma muito mais rápida comparado à primeira execução.
-
----
 
 ## ⚙️ Variáveis de Ambiente (Opcional - Uso sem Docker Compose)
 
