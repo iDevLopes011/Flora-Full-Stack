@@ -8,6 +8,14 @@ Abaixo, você encontrará o guia definitivo de como configurar e rodar o projeto
 
 ---
 
+## ✈️ Aplicação em Produção (AWS)
+
+Você pode testar a versão online do projeto hospedada na AWS através do link abaixo:
+
+🔗 **[Acessar o Flora Full-Stack](http://54.160.61.151:3000/signup)**
+
+---
+
 ## 🛠️ Tecnologias Utilizadas
 
 Este projeto foi construído utilizando as seguintes linguagens, frameworks e ferramentas:
@@ -54,7 +62,6 @@ Abra o seu terminal na raiz do projeto (onde está localizado o arquivo `docker-
 ```bash
 docker-compose up --build
 ```
-> **Dica:** Se preferir que os containers rodem livres do seu terminal atual (em background/detached mode), adicione a flag `-d` ao comando: `docker-compose up --build -d`.
 
 **Pronto! Apenas isso!** 🎉
 Sua aplicação vai baixar as dependências, iniciar o banco de dados, aplicar o `prisma db push` automaticamente e até mesmo realizar a inserção dos dados iniciais (Seed) na primeira execução. Tudo já está orquestrado no `docker-compose.yml`.
