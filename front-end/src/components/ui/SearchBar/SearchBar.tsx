@@ -17,7 +17,6 @@ export function SearchBar() {
   const [activeIndex, setActiveIndex] = useState(-1);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  // Busca sugestões com debounce de 250ms
   useEffect(() => {
     const trimmed = query.trim();
 
@@ -30,7 +29,10 @@ export function SearchBar() {
     const timer = setTimeout(async () => {
       setLoading(true);
       try {
-        const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+        const API_BASE_URL =
+          typeof window !== "undefined"
+            ? `http://${window.location.hostname}:8000`
+            : process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
         const url = new URL(`${API_BASE_URL}/entries/en`);
         url.searchParams.append("search", trimmed);
         url.searchParams.append("limit", "8");
@@ -104,7 +106,7 @@ export function SearchBar() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      {}
+      { }
       <div className={styles.inputWrapper} ref={wrapperRef}>
         <Input
           type="text"

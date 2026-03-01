@@ -2,13 +2,11 @@
 
 import React, { useState } from "react";
 import { Input } from "@/components/ui/Input/Input";
-import { useRouter } from "next/navigation";
 import { signUp } from "@/services/auth";
 import { useAuth } from "@/contexts/AuthContext";
 import { AuthForm } from "@/components/features/auth/AuthForm/AuthForm";
 
 export default function SignUpPage() {
-  const router = useRouter();
   const { checkAuth } = useAuth();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -23,9 +21,8 @@ export default function SignUpPage() {
     try {
       await signUp(name, email, password);
       await checkAuth();
-      router.push("/");
+      window.location.href = "/";
     } catch {
-      // Mensagem genérica — não revelamos se o e-mail já está cadastrado
       setError(
         "Não foi possível criar a conta. Verifique os dados e tente novamente.",
       );

@@ -2,13 +2,12 @@
 
 import React, { useState, Suspense } from "react";
 import { Input } from "@/components/ui/Input/Input";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { signIn } from "@/services/auth";
 import { useAuth } from "@/contexts/AuthContext";
 import { AuthForm } from "@/components/features/auth/AuthForm/AuthForm";
 
 function SignInForm() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const { checkAuth } = useAuth();
   const [email, setEmail] = useState("");
@@ -24,7 +23,7 @@ function SignInForm() {
       await signIn(email, password);
       await checkAuth();
       const redirect = searchParams.get("redirect") || "/";
-      router.push(redirect);
+      window.location.href = redirect;
     } catch {
       setError(
         "E-mail ou senha inválidos. Verifique suas credenciais e tente novamente.",
